@@ -1,0 +1,35 @@
+<h1>Places You've Been</h1>
+#if ($placeList)
+  <ul>
+    #foreach ($place in $placeList)
+      <li>$place.getCity()</li>
+      <li>$place.getCountry()</li>
+      <li>$place.getDate()</li>
+      <li>$place.getLandmark()</li>
+    #end
+  </ul>
+#else
+  <p>None added</p>
+#end
+
+<p>Add a new place:</p>
+
+<form action="/places" method="post">
+  <div class="form-control">
+    <label for="city">City:</label>
+    <input id="city" name="city" type="text">
+  </div>
+  <div class="form-control">
+    <label for="country">Country:</label>
+    <input id="country" name="country" type="text">
+  </div>
+  <div class="form-control">
+    <label for="date">Date:</label>
+    <input id="date" name="date" type="text">
+  </div>
+  <div class="form-control">
+    <label for="landmark">Landmark:</label>
+    <input id="landmark" name="landmark" type="text">
+  </div>
+  <button class="btn" type="submit">Add Place!</button>
+</form>
